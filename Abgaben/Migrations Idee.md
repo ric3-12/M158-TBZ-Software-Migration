@@ -116,3 +116,25 @@ Durch die Verwendung von zwei Übergangs-Chassis konnte eine vollständige Downt
 Die Migration erfolgte kontrolliert und inkrementell, wodurch das Risiko eines kompletten Netzwerkausfalls minimiert wurde.
 
 Das gewählte Vorgehen entspricht dem Prinzip einer schrittweisen Migration (Chicken-Little-Ansatz) auf Infrastruktur-Ebene.
+
+---
+
+Start
+↓
+Analyse Stack A + B
+↓
+Chassis vorbereiten
+↓
+Stack A → Chassis 1
+→ Test OK?
+↓
+Stack B → Chassis 2
+→ Test OK?
+↓
+Chassis 1 + 2 → Produktives Chassis
+→ Routing Umschalten
+→ Test OK?
+↓
+Alte Stacks entfernen
+↓
+Ende
