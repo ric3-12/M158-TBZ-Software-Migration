@@ -4,6 +4,7 @@
 
 ### CPU 
 
+```
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit
 Byte Order:            Little Endian
@@ -26,27 +27,33 @@ L1i cache:             32K
 L2 cache:              512K
 L3 cache:              8192K
 NUMA node0 CPU(s):     0
+```
 
 ### RAM
 
+```
             total       used       free     shared    buffers     cached
 Mem:       1922428     450796    1471632        424      38688     213492
 -/+ buffers/cache:     198616    1723812
 Swap:      3227644          0    3227644
 Total:     5150072     450796    4699276
+```
 
 ### Disk
 
+```
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/mapper/vg_crmserver-lv_root
                        27G  2.3G   24G  10% /
 tmpfs                 939M     0  939M   0% /dev/shm
 /dev/sda1             477M   33M  419M   8% /boot
+```
 
 ### Network
 
 **ip a**
 
+```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -59,12 +66,15 @@ tmpfs                 939M     0  939M   0% /dev/shm
        valid_lft 86246sec preferred_lft 14246sec
     inet6 fe80::a00:27ff:fe83:765e/64 scope link
        valid_lft forever preferred_lft forever
+```
 
 **ip route**
 
+```
 10.0.2.0/24 dev eth0  proto kernel  scope link  src 10.0.2.10
 169.254.0.0/16 dev eth0  scope link  metric 1002
 default via 10.0.2.2 dev eth0
+```
 
 ---
 
@@ -73,6 +83,7 @@ default via 10.0.2.2 dev eth0
 
 ### Patchstand
 
+```
 mysql-server-5.1.73-3.el6_5.x86_64            Mon 02 Mar 2026 04:17:21 PM CET
 perl-DBD-MySQL-4.013-3.el6.x86_64             Mon 02 Mar 2026 04:17:20 PM CET
 php-mysql-5.3.3-38.el6.x86_64                 Mon 02 Mar 2026 04:16:48 PM CET
@@ -93,6 +104,7 @@ ql23xx-firmware-3.03.27-3.1.el6.noarch        Mon 02 Mar 2026 03:01:38 PM CET
 ql2200-firmware-2.02.08-3.1.el6.noarch        Mon 02 Mar 2026 03:01:38 PM CET
 ql2100-firmware-1.19.38-3.1.el6.noarch        Mon 02 Mar 2026 03:01:38 PM CET
 libertas-usb8388-firmware-5.110.22.p23-3.1.el6.noarch Mon 02 Mar 2026 03:01:38 PM CET
+```
 
 ### Installierte Pakete
 
@@ -100,6 +112,7 @@ libertas-usb8388-firmware-5.110.22.p23-3.1.el6.noarch Mon 02 Mar 2026 03:01:38 P
 
 ### Laufende Prozesse
 
+```
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         1  0.0  0.0  19356  1532 ?        Ss   13:11   0:01 /sbin/init
 root         2  0.0  0.0      0     0 ?        S    13:11   0:00 [kthreadd]
@@ -196,9 +209,11 @@ apache    2191  0.0  0.5 310672 10208 ?        S    14:44   0:00 /usr/sbin/httpd
 apache    2192  0.0  0.5 310672 10208 ?        S    14:44   0:00 /usr/sbin/httpd
 postfix   3713  0.0  0.1  81408  3828 ?        S    14:52   0:00 pickup -l -t fifo -u
 root      3829  0.0  0.0 110236  1124 pts/0    R+   15:25   0:00 ps aux
+```
 
 ### Cronjobs
 
+```
 SHELL=/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
@@ -214,10 +229,12 @@ HOME=/
   |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
   |  |  |  |  |
   *  *  *  *  * user-name command to be executed
+```
 
 **ls /etc/cron.**
 
-  /etc/cron.deny
+```
+/etc/cron.deny
 
 /etc/cron.d:
 0hourly  raid-check  sysstat
@@ -232,6 +249,7 @@ HOME=/
 readahead-monthly.cron
 
 /etc/cron.weekly:
+```
 
 ---
 
@@ -239,6 +257,7 @@ readahead-monthly.cron
 
 **User**
 
+```
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/sbin:/sbin/nologin
@@ -271,9 +290,11 @@ sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
 oprofile:x:16:16:Special user account to be used by OProfile:/home/oprofile:/sbin/nologin
 tcpdump:x:72:72::/:/sbin/nologin
 mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash
+```
 
 **Gruppen**
 
+```
 root:x:0:
 bin:x:1:bin,daemon
 daemon:x:2:bin,daemon
@@ -326,6 +347,7 @@ stapsys:x:157:
 stapdev:x:158:
 slocate:x:21:
 mysql:x:27:
+```
 
 ---
 
@@ -337,6 +359,7 @@ mysql:x:27:
 
 ### Firewall-Regeln
 
+```
 Chain INPUT (policy ACCEPT 1415 packets, 90371 bytes)
  pkts bytes target     prot opt in     out     source               destination
 
@@ -345,11 +368,13 @@ Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
 
 Chain OUTPUT (policy ACCEPT 764 packets, 167K bytes)
  pkts bytes target     prot opt in     out     source               destination
+```
 
- ### Offene Ports
+### Offene Ports
 
- **ss -tlnp**
+**ss -tlnp**
 
+```
  State      Recv-Q Send-Q                            Local Address:Port                              Peer Address:Port
 LISTEN     0      128                                          :::22                                          :::*      users:(("sshd",1304,4))
 LISTEN     0      128                                           *:22                                           *:*      users:(("sshd",1304,3))
@@ -364,9 +389,11 @@ LISTEN     0      50                                            *:3306          
 LISTEN     0      128                                          :::111                                         :::*      users:(("rpcbind",1007,11))
 LISTEN     0      128                                           *:111                                          *:*      users:(("rpcbind",1007,8))
 LISTEN     0      128                                          :::80                                          :::*      users:(("httpd",1609,5),("httpd",2185,5),("httpd",2186,5),("httpd",2187,5),("httpd",2188,5),("httpd",2189,5),("httpd",2190,5),("httpd",2191,5),("httpd",2192,5))
+```
 
 **Netstat**
 
+```
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name
 tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      1304/sshd
@@ -382,9 +409,11 @@ tcp        0      0 :::443                      :::*                        LIST
 tcp        0      0 :::41117                    :::*                        LISTEN      1027/rpc.statd
 tcp        0      0 :::111                      :::*                        LISTEN      1007/rpcbind
 tcp        0      0 :::80                       :::*                        LISTEN      1609/httpd
+```
 
 ### SSL Zertifikat
 
+```
 /etc/pki/tls/certs/ca-bundle.crt
 /etc/pki/tls/certs/localhost.crt
 /etc/pki/tls/certs/ca-bundle.trust.crt
@@ -393,19 +422,24 @@ tcp        0      0 :::80                       :::*                        LIST
 /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
 /etc/pki/ca-trust/extracted/pem/objsign-ca-bundle.pem
 /etc/pki/ca-trust/extracted/pem/email-ca-bundle.pem
+```
 
 ### DNS
 
 **cat /etc/resolv.conf**
 
+```
 nameserver 8.8.8.8
 nameserver 8.8.4.4
+```
 
 **cat /etc/hosts**
 
+```
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 10.0.2.10   crmserver crmserver.sample.ch
+```
 
 ---
 
