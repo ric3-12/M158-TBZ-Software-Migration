@@ -16,5 +16,7 @@ Das Projekt ist auf 6 Wochen ausgelegt und gliedert sich in die Phasen Planung, 
 # Rollback-Plan
 Die bestehende CentOS 6.6 VM bleibt bis zum offiziellen Go-Live vollständig erhalten und in Betrieb. Im Falle eines kritischen Fehlers während der Migration wird der DNS-Eintrag zurückgesetzt und der Betrieb auf der alten VM wiederhergestellt.
 
+---
+
 # Risiken
 Die grössten identifizierten Risiken sind die Kompatibilität zwischen PHP 5.x (CentOS) und PHP 8.x (Ubuntu), potenzielle Datenverluste während des Datenbankimports sowie mögliche Zeitverzögerungen bei unvorhergesehenen technischen Problemen.
