@@ -1,0 +1,412 @@
+# IST Analyse
+
+## Hardware 
+
+### CPU 
+
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                1
+On-line CPU(s) list:   0
+Thread(s) per core:    1
+Core(s) per socket:    1
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             AuthenticAMD
+CPU family:            23
+Model:                 96
+Stepping:              1
+CPU MHz:               1996.196
+BogoMIPS:              3992.39
+Hypervisor vendor:     KVM
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              512K
+L3 cache:              8192K
+NUMA node0 CPU(s):     0
+
+### RAM
+
+            total       used       free     shared    buffers     cached
+Mem:       1922428     450796    1471632        424      38688     213492
+-/+ buffers/cache:     198616    1723812
+Swap:      3227644          0    3227644
+Total:     5150072     450796    4699276
+
+### Disk
+
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/vg_crmserver-lv_root
+                       27G  2.3G   24G  10% /
+tmpfs                 939M     0  939M   0% /dev/shm
+/dev/sda1             477M   33M  419M   8% /boot
+
+### Network
+
+**ip a**
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 08:00:27:83:76:5e brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.10/24 brd 10.0.2.255 scope global eth0
+    inet6 fd00::a00:27ff:fe83:765e/64 scope global dynamic
+       valid_lft 86246sec preferred_lft 14246sec
+    inet6 fe80::a00:27ff:fe83:765e/64 scope link
+       valid_lft forever preferred_lft forever
+
+**ip route**
+
+10.0.2.0/24 dev eth0  proto kernel  scope link  src 10.0.2.10
+169.254.0.0/16 dev eth0  scope link  metric 1002
+default via 10.0.2.2 dev eth0
+
+---
+
+
+## Betriebsystem
+
+### Patchstand
+
+mysql-server-5.1.73-3.el6_5.x86_64            Mon 02 Mar 2026 04:17:21 PM CET
+perl-DBD-MySQL-4.013-3.el6.x86_64             Mon 02 Mar 2026 04:17:20 PM CET
+php-mysql-5.3.3-38.el6.x86_64                 Mon 02 Mar 2026 04:16:48 PM CET
+nmap-5.51-4.el6.x86_64                        Mon 02 Mar 2026 03:22:43 PM CET
+gpg-pubkey-c105b9de-4e0fd3a3                  Mon 02 Mar 2026 03:22:38 PM CET
+words-3.0-17.el6.noarch                       Mon 02 Mar 2026 03:01:40 PM CET
+man-pages-3.22-20.el6.noarch                  Mon 02 Mar 2026 03:01:40 PM CET
+centos-indexhtml-6-2.el6.centos.noarch        Mon 02 Mar 2026 03:01:40 PM CET
+zd1211-firmware-1.4-4.el6.noarch              Mon 02 Mar 2026 03:01:38 PM CET
+xorg-x11-drv-ati-firmware-7.3.99-2.el6.noarch Mon 02 Mar 2026 03:01:38 PM CET
+trace-cmd-1.0.5-11.el6.x86_64                 Mon 02 Mar 2026 03:01:38 PM CET
+rt73usb-firmware-1.8-7.el6.noarch             Mon 02 Mar 2026 03:01:38 PM CET
+rt61pci-firmware-1.2-7.el6.noarch             Mon 02 Mar 2026 03:01:38 PM CET
+rootfiles-8.1-6.1.el6.noarch                  Mon 02 Mar 2026 03:01:38 PM CET
+ql2500-firmware-7.03.00-1.el6_5.noarch        Mon 02 Mar 2026 03:01:38 PM CET
+ql2400-firmware-7.03.00-1.el6_5.noarch        Mon 02 Mar 2026 03:01:38 PM CET
+ql23xx-firmware-3.03.27-3.1.el6.noarch        Mon 02 Mar 2026 03:01:38 PM CET
+ql2200-firmware-2.02.08-3.1.el6.noarch        Mon 02 Mar 2026 03:01:38 PM CET
+ql2100-firmware-1.19.38-3.1.el6.noarch        Mon 02 Mar 2026 03:01:38 PM CET
+libertas-usb8388-firmware-5.110.22.p23-3.1.el6.noarch Mon 02 Mar 2026 03:01:38 PM CET
+
+### Installierte Pakete
+
+[Packetliste](/Projekt/3_Analyse/Installierte%20Packacges.md)
+
+### Laufende Prozesse
+
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  19356  1532 ?        Ss   13:11   0:01 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    13:11   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    13:11   0:00 [migration/0]
+root         4  0.0  0.0      0     0 ?        S    13:11   0:00 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S    13:11   0:00 [stopper/0]
+root         6  0.0  0.0      0     0 ?        S    13:11   0:00 [watchdog/0]
+root         7  0.1  0.0      0     0 ?        S    13:11   0:10 [events/0]
+root         8  0.0  0.0      0     0 ?        S    13:11   0:00 [cgroup]
+root         9  0.0  0.0      0     0 ?        S    13:11   0:00 [khelper]
+root        10  0.0  0.0      0     0 ?        S    13:11   0:00 [netns]
+root        11  0.0  0.0      0     0 ?        S    13:11   0:00 [async/mgr]
+root        12  0.0  0.0      0     0 ?        S    13:11   0:00 [pm]
+root        13  0.0  0.0      0     0 ?        S    13:11   0:00 [sync_supers]
+root        14  0.0  0.0      0     0 ?        S    13:11   0:00 [bdi-default]
+root        15  0.0  0.0      0     0 ?        S    13:11   0:00 [kintegrityd/0]
+root        16  0.0  0.0      0     0 ?        S    13:11   0:00 [kblockd/0]
+root        17  0.0  0.0      0     0 ?        S    13:11   0:00 [kacpid]
+root        18  0.0  0.0      0     0 ?        S    13:11   0:00 [kacpi_notify]
+root        19  0.0  0.0      0     0 ?        S    13:11   0:00 [kacpi_hotplug]
+root        20  0.0  0.0      0     0 ?        S    13:11   0:00 [ata_aux]
+root        21  0.0  0.0      0     0 ?        S    13:11   0:00 [ata_sff/0]
+root        22  0.0  0.0      0     0 ?        S    13:11   0:00 [ksuspend_usbd]
+root        23  0.0  0.0      0     0 ?        S    13:11   0:00 [khubd]
+root        24  0.0  0.0      0     0 ?        S    13:11   0:00 [kseriod]
+root        25  0.0  0.0      0     0 ?        S    13:11   0:00 [md/0]
+root        26  0.0  0.0      0     0 ?        S    13:11   0:00 [md_misc/0]
+root        27  0.0  0.0      0     0 ?        S    13:11   0:00 [linkwatch]
+root        29  0.0  0.0      0     0 ?        S    13:11   0:00 [khungtaskd]
+root        30  0.0  0.0      0     0 ?        S    13:11   0:00 [kswapd0]
+root        31  0.0  0.0      0     0 ?        SN   13:11   0:00 [ksmd]
+root        32  0.0  0.0      0     0 ?        SN   13:11   0:00 [khugepaged]
+root        33  0.0  0.0      0     0 ?        S    13:11   0:00 [aio/0]
+root        34  0.0  0.0      0     0 ?        S    13:11   0:00 [crypto/0]
+root        42  0.0  0.0      0     0 ?        S    13:11   0:00 [kthrotld/0]
+root        44  0.0  0.0      0     0 ?        S    13:11   0:00 [kpsmoused]
+root        45  0.0  0.0      0     0 ?        S    13:11   0:00 [usbhid_resumer]
+root        46  0.0  0.0      0     0 ?        S    13:11   0:00 [deferwq]
+root        78  0.0  0.0      0     0 ?        S    13:11   0:00 [kdmremove]
+root        79  0.0  0.0      0     0 ?        S    13:11   0:00 [kstriped]
+root       152  0.0  0.0      0     0 ?        S    13:11   0:00 [scsi_eh_0]
+root       153  0.0  0.0      0     0 ?        S    13:11   0:00 [scsi_eh_1]
+root       165  0.0  0.0      0     0 ?        S    13:11   0:00 [scsi_eh_2]
+root       241  0.0  0.0      0     0 ?        S    13:11   0:00 [kdmflush]
+root       243  0.0  0.0      0     0 ?        S    13:11   0:00 [kdmflush]
+root       260  0.0  0.0      0     0 ?        S    13:11   0:00 [jbd2/dm-0-8]
+root       261  0.0  0.0      0     0 ?        S    13:11   0:00 [ext4-dio-unwrit]
+root       353  0.0  0.0      0     0 ?        S    13:11   0:00 [flush-253:0]
+root       354  0.0  0.0  11092  1192 ?        S<s  13:11   0:00 /sbin/udevd -d
+root       621  0.0  0.0      0     0 ?        S    13:11   0:00 [jbd2/sda1-8]
+root       622  0.0  0.0      0     0 ?        S    13:11   0:00 [ext4-dio-unwrit]
+root       714  0.0  0.0      0     0 ?        S    13:11   0:00 [kauditd]
+root       932  0.0  0.0  27596   796 ?        S<sl 13:11   0:00 auditd
+root       962  0.0  0.0 249084  1604 ?        Sl   13:11   0:00 /sbin/rsyslogd -i /var/run/syslogd.pid -c 5
+rpc       1007  0.0  0.0  18976   908 ?        Ss   13:12   0:00 rpcbind
+rpcuser   1027  0.0  0.0  23348  1336 ?        Ss   13:12   0:00 rpc.statd
+dbus      1158  0.0  0.0  31804  1240 ?        Ssl  13:12   0:00 dbus-daemon --system
+root      1177  0.0  0.1 189408  3780 ?        Ss   13:12   0:00 cupsd -C /etc/cups/cupsd.conf
+root      1206  0.0  0.0   4080   636 ?        Ss   13:12   0:00 /usr/sbin/acpid
+68        1216  0.0  0.2  37916  4136 ?        Ssl  13:12   0:00 hald
+root      1218  0.0  0.0  20400  1160 ?        S    13:12   0:00 hald-runner
+root      1250  0.0  0.0  22520  1092 ?        S    13:12   0:00 hald-addon-input: Listening on /dev/input/event3 /dev/input/event5 /dev/input/event1 /dev/i
+68        1260  0.0  0.0  18008  1024 ?        S    13:12   0:00 hald-addon-acpi: listening on acpid socket /var/run/acpid.socket
+root      1280  0.0  0.0 386136  1912 ?        Ssl  13:12   0:00 automount --pid-file /var/run/autofs.pid
+root      1304  0.0  0.0  66688  1212 ?        Ss   13:12   0:00 /usr/sbin/sshd
+root      1344  0.0  0.0 108204  1444 ?        S    13:12   0:00 /bin/sh /usr/bin/mysqld_safe --datadir=/var/lib/mysql --socket=/var/lib/mysql/mysql.sock --
+mysql     1449  0.0  1.1 377988 21680 ?        Sl   13:12   0:02 /usr/libexec/mysqld --basedir=/usr --datadir=/var/lib/mysql --user=mysql --log-error=/var/l
+root      1571  0.0  0.1  81328  3836 ?        Ss   13:12   0:00 /usr/libexec/postfix/master
+postfix   1577  0.0  0.2  81592  3864 ?        S    13:12   0:00 qmgr -l -t fifo -u
+root      1599  0.0  0.0 114644  1080 ?        Ss   13:12   0:00 /usr/sbin/abrtd
+root      1609  0.0  0.8 309080 15656 ?        Ss   13:12   0:01 /usr/sbin/httpd
+root      1628  0.0  0.0 117336  1396 ?        Ss   13:12   0:01 crond
+root      1642  0.0  0.0  21576   512 ?        Ss   13:12   0:00 /usr/sbin/atd
+root      1659  0.0  0.0  64704  1248 ?        Ss   13:12   0:00 /usr/sbin/certmonger -S -p /var/run/certmonger.pid
+root      1719  0.0  0.1  79520  3008 ?        Ss   13:12   0:00 login -- root
+root      1721  0.0  0.0   4064   548 tty2     Ss+  13:12   0:00 /sbin/mingetty /dev/tty2
+root      1723  0.0  0.0   4064   544 tty3     Ss+  13:12   0:00 /sbin/mingetty /dev/tty3
+root      1724  0.0  0.1  12396  2608 ?        S<   13:12   0:00 /sbin/udevd -d
+root      1725  0.0  0.1  12396  2612 ?        S<   13:12   0:00 /sbin/udevd -d
+root      1727  0.0  0.0   4064   548 tty4     Ss+  13:12   0:00 /sbin/mingetty /dev/tty4
+root      1729  0.0  0.0   4064   548 tty5     Ss+  13:12   0:00 /sbin/mingetty /dev/tty5
+root      1731  0.0  0.0   4064   548 tty6     Ss+  13:12   0:00 /sbin/mingetty /dev/tty6
+root      1756  0.0  0.1 577736  3192 ?        Sl   13:13   0:00 /usr/sbin/console-kit-daemon --no-daemon
+root      1822  0.0  0.0 108336  1740 tty1     Ss+  13:13   0:00 -bash
+root      1842  0.0  0.2 100448  4480 ?        Ss   13:14   0:01 sshd: root@pts/0
+root      1849  0.0  0.0 108340  1812 pts/0    Ss   13:14   0:00 -bash
+apache    2185  0.0  0.5 310672 10208 ?        S    14:44   0:00 /usr/sbin/httpd
+apache    2186  0.0  0.5 310672 10208 ?        S    14:44   0:00 /usr/sbin/httpd
+apache    2187  0.0  0.5 310672 10208 ?        S    14:44   0:00 /usr/sbin/httpd
+apache    2188  0.0  0.5 310672 10212 ?        S    14:44   0:00 /usr/sbin/httpd
+apache    2189  0.0  0.5 310672 10208 ?        S    14:44   0:00 /usr/sbin/httpd
+apache    2190  0.0  0.5 310672 10208 ?        S    14:44   0:00 /usr/sbin/httpd
+apache    2191  0.0  0.5 310672 10208 ?        S    14:44   0:00 /usr/sbin/httpd
+apache    2192  0.0  0.5 310672 10208 ?        S    14:44   0:00 /usr/sbin/httpd
+postfix   3713  0.0  0.1  81408  3828 ?        S    14:52   0:00 pickup -l -t fifo -u
+root      3829  0.0  0.0 110236  1124 pts/0    R+   15:25   0:00 ps aux
+
+### Cronjobs
+
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
+
+  For details see man 4 crontabs
+
+  Example of job definition:
+  .---------------- minute (0 - 59)
+  |  .------------- hour (0 - 23)
+  |  |  .---------- day of month (1 - 31)
+  |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+  |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+  |  |  |  |  |
+  *  *  *  *  * user-name command to be executed
+
+**ls /etc/cron.**
+
+  /etc/cron.deny
+
+/etc/cron.d:
+0hourly  raid-check  sysstat
+
+/etc/cron.daily:
+00webalizer  certwatch  cups  logrotate  makewhatis.cron  mlocate.cron  prelink  readahead.cron  tmpwatch
+
+/etc/cron.hourly:
+0anacron
+
+/etc/cron.monthly:
+readahead-monthly.cron
+
+/etc/cron.weekly:
+
+---
+
+### Benutzer und Gruppen
+
+**User**
+
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+vcsa:x:69:69:virtual console memory owner:/dev:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/cache/rpcbind:/sbin/nologin
+abrt:x:173:173::/etc/abrt:/sbin/nologin
+apache:x:48:48:Apache:/var/www:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+haldaemon:x:68:68:HAL daemon:/:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+saslauth:x:499:76:Saslauthd user:/var/empty/saslauth:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+tomcat:x:91:91:Apache Tomcat:/usr/share/tomcat6:/sbin/nologin
+webalizer:x:67:67:Webalizer:/var/www/usage:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+oprofile:x:16:16:Special user account to be used by OProfile:/home/oprofile:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash
+
+**Gruppen**
+
+root:x:0:
+bin:x:1:bin,daemon
+daemon:x:2:bin,daemon
+sys:x:3:bin,adm
+adm:x:4:adm,daemon
+tty:x:5:
+disk:x:6:
+lp:x:7:daemon
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+mail:x:12:mail,postfix
+uucp:x:14:
+man:x:15:
+games:x:20:
+gopher:x:30:
+video:x:39:
+dip:x:40:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+nobody:x:99:
+users:x:100:
+dbus:x:81:
+utmp:x:22:
+utempter:x:35:
+floppy:x:19:
+vcsa:x:69:
+rpc:x:32:
+abrt:x:173:
+cdrom:x:11:
+tape:x:33:
+dialout:x:18:
+apache:x:48:
+wbpriv:x:88:
+rpcuser:x:29:
+nfsnobody:x:65534:
+haldaemon:x:68:haldaemon
+ntp:x:38:
+saslauth:x:76:
+postdrop:x:90:
+postfix:x:89:
+tomcat:x:91:
+webalizer:x:67:
+sshd:x:74:
+oprofile:x:16:
+tcpdump:x:72:
+stapusr:x:156:
+stapsys:x:157:
+stapdev:x:158:
+slocate:x:21:
+mysql:x:27:
+
+---
+
+## Applikation
+
+---
+
+## Sicherheit
+
+### Firewall-Regeln
+
+Chain INPUT (policy ACCEPT 1415 packets, 90371 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+
+Chain OUTPUT (policy ACCEPT 764 packets, 167K bytes)
+ pkts bytes target     prot opt in     out     source               destination
+
+ ### Offene Ports
+
+ **ss -tlnp**
+
+ State      Recv-Q Send-Q                            Local Address:Port                              Peer Address:Port
+LISTEN     0      128                                          :::22                                          :::*      users:(("sshd",1304,4))
+LISTEN     0      128                                           *:22                                           *:*      users:(("sshd",1304,3))
+LISTEN     0      128                                   127.0.0.1:631                                          *:*      users:(("cupsd",1177,7))
+LISTEN     0      128                                         ::1:631                                         :::*      users:(("cupsd",1177,6))
+LISTEN     0      100                                         ::1:25                                          :::*      users:(("master",1571,13))
+LISTEN     0      100                                   127.0.0.1:25                                           *:*      users:(("master",1571,12))
+LISTEN     0      128                                          :::443                                         :::*      users:(("httpd",1609,7),("httpd",2185,7),("httpd",2186,7),("httpd",2187,7),("httpd",2188,7),("httpd",2189,7),("httpd",2190,7),("httpd",2191,7),("httpd",2192,7))
+LISTEN     0      128                                          :::41117                                       :::*      users:(("rpc.statd",1027,11))
+LISTEN     0      128                                           *:40576                                        *:*      users:(("rpc.statd",1027,9))
+LISTEN     0      50                                            *:3306                                         *:*      users:(("mysqld",1449,10))
+LISTEN     0      128                                          :::111                                         :::*      users:(("rpcbind",1007,11))
+LISTEN     0      128                                           *:111                                          *:*      users:(("rpcbind",1007,8))
+LISTEN     0      128                                          :::80                                          :::*      users:(("httpd",1609,5),("httpd",2185,5),("httpd",2186,5),("httpd",2187,5),("httpd",2188,5),("httpd",2189,5),("httpd",2190,5),("httpd",2191,5),("httpd",2192,5))
+
+**Netstat**
+
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name
+tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      1304/sshd
+tcp        0      0 127.0.0.1:631               0.0.0.0:*                   LISTEN      1177/cupsd
+tcp        0      0 127.0.0.1:25                0.0.0.0:*                   LISTEN      1571/master
+tcp        0      0 0.0.0.0:40576               0.0.0.0:*                   LISTEN      1027/rpc.statd
+tcp        0      0 0.0.0.0:3306                0.0.0.0:*                   LISTEN      1449/mysqld
+tcp        0      0 0.0.0.0:111                 0.0.0.0:*                   LISTEN      1007/rpcbind
+tcp        0      0 :::22                       :::*                        LISTEN      1304/sshd
+tcp        0      0 ::1:631                     :::*                        LISTEN      1177/cupsd
+tcp        0      0 ::1:25                      :::*                        LISTEN      1571/master
+tcp        0      0 :::443                      :::*                        LISTEN      1609/httpd
+tcp        0      0 :::41117                    :::*                        LISTEN      1027/rpc.statd
+tcp        0      0 :::111                      :::*                        LISTEN      1007/rpcbind
+tcp        0      0 :::80                       :::*                        LISTEN      1609/httpd
+
+### SSL Zertifikat
+
+/etc/pki/tls/certs/ca-bundle.crt
+/etc/pki/tls/certs/localhost.crt
+/etc/pki/tls/certs/ca-bundle.trust.crt
+/etc/pki/tls/cert.pem
+/etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
+/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+/etc/pki/ca-trust/extracted/pem/objsign-ca-bundle.pem
+/etc/pki/ca-trust/extracted/pem/email-ca-bundle.pem
+
+### DNS
+
+**cat /etc/resolv.conf**
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+**cat /etc/hosts**
+
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.0.2.10   crmserver crmserver.sample.ch
+
+---
+
+## Daten
