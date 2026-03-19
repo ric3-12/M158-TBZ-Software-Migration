@@ -4,7 +4,7 @@ Das Ziel dieses Projekts ist die vollständige Migration der bestehenden vTiger 
 ---
 
 # Verantwortlichkeiten
-Die gesamte Planung, Durchführung und Dokumentation der Migration liegt beim Projektverantwortlichen. Der Berufsschullehrer übernimmt die Rolle des Stakeholders und ist für die Freigabe der einzelnen Milestones zuständig.
+Die gesamte Planung, Durchführung und Dokumentation der Migration liegt beim Projektverantwortlichen (Mir). Der Berufsschullehrer übernimmt die Rolle des Stakeholders.
 
 ---
 
