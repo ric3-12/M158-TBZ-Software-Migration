@@ -1,3 +1,4 @@
+```
 abrt-2.0.8-26.el6.centos.x86_64
 abrt-addon-ccpp-2.0.8-26.el6.centos.x86_64
 abrt-addon-kerneloops-2.0.8-26.el6.centos.x86_64
@@ -729,3 +730,4 @@ yum-utils-1.1.30-30.el6.noarch
 zd1211-firmware-1.4-4.el6.noarch
 zip-3.0-1.el6.x86_64
 zlib-1.2.3-29.el6.x86_64
+```
